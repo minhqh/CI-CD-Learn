@@ -47,3 +47,6 @@ jobs:
 
           docker build -t ${{ secrets.DOCKER_USERNAME }}/mini-api:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/mini-api:latest
+
+      - name: Kích hoạt Render Deploy
+        run: curl -X GET "${{ secrets.RENDER_DEPLOY_HOOK }}"

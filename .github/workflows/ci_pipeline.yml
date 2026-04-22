@@ -1,0 +1,29 @@
+name: Python CI
+
+# Kích hoạt khi push lên main
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  test_api:
+    runs-on: ubuntu-latest #Máy ảo ubuntu
+
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v3
+
+      - name: Cái đặt môi trường python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Thêm các thư viện cần thiết
+        run: |
+          cd labs
+          pip install -r requirements.txt
+
+      - name: Chạy thử test
+        run: |
+          cd labs
+          pytest tests/

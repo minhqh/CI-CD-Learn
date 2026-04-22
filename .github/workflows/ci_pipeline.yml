@@ -26,4 +26,4 @@ jobs:
       - name: Chạy thử test
         run: |
           cd labs
-          pytest tests/
+          python -m pytest tests/

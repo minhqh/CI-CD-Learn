@@ -15,6 +15,7 @@ CI-CD-Learn/
 │   └── 05_trien_khai_server.md
 ├── labs/
 │   └── tests/
+│       ├── __init__.py 
 │       └── test_main.py
 │   ├── requirements.txt
 │   └── main.py

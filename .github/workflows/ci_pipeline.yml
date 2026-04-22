@@ -27,3 +27,15 @@ jobs:
         run: |
           cd labs
           python -m pytest tests/
+  build_docker:
+    needs: [test_api] 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image để kiểm tra
+        run: |
+          cd labs
+          docker build -t mini-api:latest .

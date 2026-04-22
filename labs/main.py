@@ -4,7 +4,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Xin chào mọi người tôi là Minh đẹp trai!"}
+    return {"message": "Khang lỏ chjm"}
 
 @app.get("/process/{data_id}")
 def process_data(data_id: int):

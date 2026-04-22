@@ -6,7 +6,7 @@ client = TestClient(app)
 def test_read_root():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Xin chào mọi người tôi là Minh đẹp trai!"}
+    assert response.json() == {"message": "Khang lỏ chjm"}
 
 def test_process_data_valid():
     # Test với ID chẵn (Kỳ vọng: success)

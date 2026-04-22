@@ -35,7 +35,15 @@ jobs:
       - name: Lấy mã nguồn
         uses: actions/checkout@v3
 
-      - name: Build Docker Image để kiểm tra
+      - name: Đăng nhập vào Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build và Push Docker Image
         run: |
           cd labs
-          docker build -t mini-api:latest .
+
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/mini-api:latest .
+          docker push ${{ secrets.DOCKER_USERNAME }}/mini-api:latest

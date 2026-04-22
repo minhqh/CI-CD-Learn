@@ -17,6 +17,8 @@ CI-CD-Learn/
 │   └── tests/
 │       ├── __init__.py 
 │       └── test_main.py
+│   ├── .dockerignore
+│   ├── Dockerfile
 │   ├── requirements.txt
 │   └── main.py
 ├── .gitignore
